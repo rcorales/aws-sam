@@ -37,7 +37,7 @@ functions:
         Resource: !GetAtt PostsTable.Arn
   getPost:
     handler: api.getPost
-    name: get-post
+    name: get-post-id
     memorySize: 128 # mb
     timeout: 5 # seconds
     events:
