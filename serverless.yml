@@ -11,6 +11,16 @@ provider:
 
 custom:
   postsTableName: posts-table-${self:provider.stage}
+  stageSettings:
+    CacheClusterEnabled: true
+    CacheClusterSize: '0.5'
+    Variables:
+      foo: bar
+      baz: xyzzy
+    MethodSettings:
+      LoggingLevel: INFO
+      CachingEnabled: true
+      CacheTtlInSeconds: 3600
 
 plugins:
   - serverless-iam-roles-per-function
