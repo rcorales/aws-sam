@@ -11,27 +11,15 @@ provider:
 
 custom:
   postsTableName: posts-table-${self:provider.stage}
-  stageSettings:
-    CacheClusterEnabled: true
-    CacheClusterSize: '0.5'
-    Variables:
-      foo: bar
-      baz: xyzzy
-    MethodSettings:
-      LoggingLevel: INFO
-      CachingEnabled: true
-      CacheTtlInSeconds: 3600
-    stageVariables:
+  stageVariables:
     bucket_name: my-bucket
     endpoint: test01
     foo: bar
 
 plugins:
   - serverless-plugin-stage-variables  
-
-plugins:
   - serverless-iam-roles-per-function
-
+  
 functions:
   getPost:
     handler: api.getPost
