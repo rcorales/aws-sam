@@ -9,9 +9,6 @@ provider:
   environment:
     DYNAMODB_TABLE_NAME: ${self:custom.postsTableName}
 
-plugins:
-  - serverless-api-stage
-
 custom:
   postsTableName: posts-table-${self:provider.stage}
   stageSettings:
@@ -24,6 +21,13 @@ custom:
       LoggingLevel: INFO
       CachingEnabled: true
       CacheTtlInSeconds: 3600
+    stageVariables:
+    bucket_name: my-bucket
+    endpoint: test01
+    foo: bar
+
+plugins:
+  - serverless-plugin-stage-variables  
 
 plugins:
   - serverless-iam-roles-per-function
