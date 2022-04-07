@@ -9,6 +9,9 @@ provider:
   environment:
     DYNAMODB_TABLE_NAME: ${self:custom.postsTableName}
 
+plugins:
+  - serverless-api-stage
+
 custom:
   postsTableName: posts-table-${self:provider.stage}
   stageSettings:
