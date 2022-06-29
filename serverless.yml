@@ -12,7 +12,7 @@ provider:
 custom:
   postsTableName: posts-table-${self:provider.stage}
   stageVariables:
-    bucket_name: my-bucket
+    bucket_name: my-bucket2
     endpoint: test01
     foo: bar
 
